@@ -22,7 +22,7 @@ console.log(getCumputerChoice())
 function getHumanChoice() {
     let humanChoice = prompt("Type Rock, Paper, or Scissor");
 
-    return humanChoice.charAt(0).toUpperCase() + humanChoice.slice(1);
+    return humanChoice.charAt(0).toUpperCase() + humanChoice.slice(1).toLowerCase(1);
 }
 
 function playRound(humanChoice, computerChoice) {
