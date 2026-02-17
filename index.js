@@ -20,8 +20,13 @@ function getCumputerChoice() {
 console.log(getCumputerChoice())
 
 function getHumanChoice() {
-    let humanChoice = prompt("Type Rock, Paper, or Scissor")
-    return humanChoice;
+    let humanChoice = prompt("Type Rock, Paper, or Scissor");
+
+    return humanChoice.charAt(0).toUpperCase() + humanChoice.slice(1);
+}
+
+function playRound(humanChoice, computerChoice) {
+    
 }
 
 console.log(getHumanChoice());
