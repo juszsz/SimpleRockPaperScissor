@@ -1,6 +1,9 @@
 let humanScore = 0;
 let computerScore = 0;
 
+const humanSelection = getHumanChoice();
+const computerSelection = getCumputerChoice();
+
 function getCumputerChoice() {
     let ranChoice = Math.floor(Math.random() * 3) + 1;
     switch (ranChoice) {
@@ -25,8 +28,14 @@ function getHumanChoice() {
     return humanChoice.charAt(0).toUpperCase() + humanChoice.slice(1).toLowerCase(1);
 }
 
+console.log(getHumanChoice());
+
 function playRound(humanChoice, computerChoice) {
-    
+    if (computerChoice === "Rock" && humanChoice === "Rock") {
+        console.log("DRAW!");
+    } else if (computerChoice === "Rock" && humanChoice === "Paper") {
+        console.log("YOU WIN!")
+    }
 }
 
-console.log(getHumanChoice());
+playRound(humanSelection, computerSelection);
