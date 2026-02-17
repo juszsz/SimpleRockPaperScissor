@@ -1,6 +1,5 @@
 function getCumputerChoice() {
     let ranChoice = Math.floor(Math.random() * 3) + 1;
-
     switch (ranChoice) {
         case 1:
             console.log("Rock")
@@ -12,7 +11,14 @@ function getCumputerChoice() {
             console.log("Scissor")
             break;
     }
-    return ranChoice;
+    // return ranChoice;
 }
 
 console.log(getCumputerChoice())
+
+function getHumanChoice() {
+    let humanChoice = prompt("Type Rock, Paper, or Scissor")
+    return humanChoice;
+}
+
+console.log(getHumanChoice());
