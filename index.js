@@ -1,23 +1,21 @@
 let humanScore = 0;
 let computerScore = 0;
 
-const humanSelection = getHumanChoice();
-const computerSelection = getCumputerChoice();
 const rounds = 5;
 
 function getCumputerChoice() {
     let ranChoice = Math.floor(Math.random() * 3) + 1;
     switch (ranChoice) {
         case 1:
-            console.log("Rock");
+            console.log("Computer: Rock");
             return "Rock";
             break;
         case 2:
-            console.log("Paper");
+            console.log("Computer: Paper");
             return "Paper";
             break;
         case 3:
-            console.log("Scissor");
+            console.log("Computer: Scissor");
             return "Scissor";
             break;
     }
@@ -30,7 +28,7 @@ function getHumanChoice() {
     let humanChoice = prompt("Type Rock, Paper, or Scissor");
     const upperCasePrompt = humanChoice.charAt(0).toUpperCase() + humanChoice.slice(1).toLowerCase(1);
 
-    console.log(upperCasePrompt);
+    console.log("Player: " + upperCasePrompt);
     return upperCasePrompt;
 }
 
@@ -67,12 +65,17 @@ function playRound(humanChoice, computerChoice) {
 //  playRound(humanSelection, computerSelection)
 
 function playGame() {
- playRound(humanSelection, computerSelection);
- console.log("Your Score: " + humanScore);
- console.log("Computer Score: " + computerScore);
+    humanScore = 0;
+    computerScore = 0;
+
+    for (let i = 1; i <= rounds; i++) {
+        const humanSelection = getHumanChoice();
+        const computerSelection = getCumputerChoice();
+        playRound(humanSelection, computerSelection);
+    }
+
+    console.log("Your Score: " + humanScore);
+    console.log("Computer Score: " + computerScore);
 }
 
-
-for (let i = 1; i <= rounds; i++) {
-    playGame()
-}
+playGame()
